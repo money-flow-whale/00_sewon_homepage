@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-page="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sewon Vision Co., Ltd. | Mobile Software & E-commerce</title>
+<meta name="description" content="Sewon Vision Co., Ltd. - a Korean company building mobile apps, websites and e-commerce systems, and the owner of the eyewear brand MONO SUN WORKS.">
+<meta name="google-site-verification" content="7SdkWNRS9vXFpPxz3OCMRPEKE_zSAOohEYy8gowxfbM" />
+<link rel="canonical" href="https://sewonvision.com/en/">
+<link rel="alternate" hreflang="ko" href="https://sewonvision.com/">
+<link rel="alternate" hreflang="en" href="https://sewonvision.com/en/">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; scroll-behavior: smooth; }
+  body { background: #fff; font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #18181b; -webkit-font-smoothing: antialiased; }
+  ::selection { background: #2563EB; color: #fff; }
+  a { color: inherit; text-decoration: none; }
+
+  /* Scroll reveal */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.72s cubic-bezier(0.16,1,0.3,1),
+                transform 0.72s cubic-bezier(0.16,1,0.3,1);
+  }
+  [data-reveal].in { opacity: 1; transform: none; }
+  [data-reveal-d="1"] { transition-delay: 0.08s; }
+  [data-reveal-d="2"] { transition-delay: 0.17s; }
+  [data-reveal-d="3"] { transition-delay: 0.26s; }
+
+  /* Hero entrance */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .h-eye { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+  .h-l1  { animation: fadeUp 0.7s 0.08s cubic-bezier(0.16,1,0.3,1) both; }
+  .h-l2  { animation: fadeUp 0.7s 0.16s cubic-bezier(0.16,1,0.3,1) both; }
+  .h-sub { animation: fadeUp 0.7s 0.26s cubic-bezier(0.16,1,0.3,1) both; }
+  .h-cta { animation: fadeUp 0.7s 0.36s cubic-bezier(0.16,1,0.3,1) both; }
+
+  /* Nav */
+  .nav-link { font-size: 14px; color: #52525b; font-weight: 500; transition: color 0.18s; }
+  .nav-link:hover { color: #18181b; }
+  .nav-links-desk { display: flex; align-items: center; gap: 28px; }
+
+  /* Hamburger */
+  .ham-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px 4px; }
+  .ham-line { display: block; width: 22px; height: 2px; background: #18181b; border-radius: 2px; transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), opacity 0.2s; }
+  .ham-btn.open .ham-line:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .ham-btn.open .ham-line:nth-child(2) { opacity: 0; }
+  .ham-btn.open .ham-line:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* Mobile menu */
+  .mob-menu { border-top: 1px solid #ececef; padding: 24px 28px 28px; display: none; flex-direction: column; gap: 22px; background: rgba(255,255,255,0.97); }
+  .mob-menu.open { display: flex; }
+  .mob-menu a { font-size: 20px; font-weight: 600; color: #18181b; letter-spacing: -0.01em; }
+
+  /* Lang toggle */
+  .lang-btn { font-family: inherit; cursor: pointer; background: transparent; border: 1px solid #d4d4d8; border-radius: 999px; padding: 8px 16px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em; color: #3f3f46; transition: border-color 0.2s, color 0.2s; min-height: 44px; min-width: 52px; }
+  .lang-btn:hover { border-color: #18181b; color: #18181b; }
+
+  /* Service rows */
+  .svc-row { transition: background 0.18s; }
+  .svc-row:hover { background: #f5f8ff; }
+  .svc-row-outer { display: grid; grid-template-columns: 56px 1fr; gap: clamp(14px, 4vw, 48px); padding: 30px 0; border-top: 1px solid #ececef; align-items: start; }
+  .svc-inner { display: grid; grid-template-columns: minmax(160px, 0.85fr) 1.4fr; gap: clamp(12px, 3vw, 44px); align-items: start; }
+
+  /* "View services" link */
+  .svc-more-link { font-size: 15px; font-weight: 600; color: #3f3f46; padding: 14px 8px; transition: color 0.2s; }
+  .svc-more-link:hover { color: #18181b; }
+
+  /* Portfolio cards */
+  .pcard { display: flex; flex-direction: column; border: 1px solid #e4e4e7; border-radius: 10px; overflow: hidden; background: #fff; color: inherit; transition: transform 0.28s cubic-bezier(0.16,1,0.3,1), box-shadow 0.28s cubic-bezier(0.16,1,0.3,1), border-color 0.22s; }
+  .pcard:hover { transform: translateY(-5px); box-shadow: 0 18px 48px rgba(37,99,235,0.10); border-color: #2563EB; }
+
+  /* CTA button */
+  .cta-btn { display: inline-block; background: #2563EB; color: #fff; font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: 999px; transition: background 0.2s, transform 0.15s; }
+  .cta-btn:hover { background: #1d4ed8; }
+  .cta-btn:active { transform: scale(0.97); }
+
+  /* Email link */
+  .mail-link { display: inline-block; padding-bottom: 4px; background-image: linear-gradient(#2563EB, #2563EB); background-size: 100% 2px; background-position: 0 100%; background-repeat: no-repeat; transition: color 0.25s; }
+  .mail-link:hover { color: #2563EB; }
+
+  /* Footer links */
+  .footer-link { transition: color 0.2s; }
+  .footer-link:hover { color: #18181b; }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .nav-links-desk { display: none !important; }
+    .ham-btn { display: flex; }
+  }
+  @media (max-width: 600px) {
+    .svc-row-outer { grid-template-columns: 1fr; gap: 4px; padding: 22px 0; }
+    .svc-num-col { display: none; }
+    .svc-inner { grid-template-columns: 1fr; gap: 10px; }
+  }
+  @media (max-width: 480px) {
+    .footer-inner { flex-direction: column !important; align-items: flex-start !important; }
+  }
+</style>
+</head>
+<body>
+
+<div style="min-height: 100vh;">
+
+  <!-- NAV -->
+  <header style="position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.88); backdrop-filter: saturate(180%) blur(12px); border-bottom: 1px solid #ececef;">
+    <nav style="max-width: 1120px; margin: 0 auto; padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
+        <span style="width: 30px; height: 30px; background: #2563EB; border-radius: 7px; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: #fff; letter-spacing: 0.06em; flex-shrink: 0;">SV</span>
+        <span style="font-size: 16px; font-weight: 700; letter-spacing: -0.01em;">Sewon Vision</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <div class="nav-links-desk">
+          <a href="#services" class="nav-link" data-ko="서비스" data-en="Services">Services</a>
+          <a href="#work" class="nav-link" data-ko="작업" data-en="Work">Work</a>
+          <a href="#about" class="nav-link" data-ko="소개" data-en="About">About</a>
+          <a href="#contact" class="nav-link" data-ko="문의" data-en="Contact">Contact</a>
+        </div>
+        <button id="hamBtn" class="ham-btn" aria-label="Menu">
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+        </button>
+        <button id="langBtn" class="lang-btn">한</button>
+      </div>
+    </nav>
+    <div id="mobMenu" class="mob-menu">
+      <a href="#services" class="mob-link" data-ko="서비스" data-en="Services">Services</a>
+      <a href="#work" class="mob-link" data-ko="작업" data-en="Work">Work</a>
+      <a href="#about" class="mob-link" data-ko="소개" data-en="About">About</a>
+      <a href="#contact" class="mob-link" data-ko="문의" data-en="Contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="top" style="max-width: 1120px; margin: 0 auto; padding: 0 28px;">
+
+    <!-- HERO -->
+    <section style="padding: clamp(72px, 13vh, 140px) 0 clamp(64px, 10vh, 110px); border-bottom: 1px solid #ececef;">
+      <p class="h-eye" style="margin: 0 0 24px; font-size: 13px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #a1a1aa;">Mobile Software Studio</p>
+      <h1 style="margin: 0;">
+        <span class="h-l1" data-ko="모바일 앱을" data-en="Mobile apps," style="display: block; font-size: clamp(38px, 7vw, 76px); line-height: 1.04; font-weight: 700; letter-spacing: -0.035em;">Mobile apps,</span>
+        <span class="h-l2" data-ko="처음부터 끝까지." data-en="built end to end." style="display: block; font-size: clamp(38px, 7vw, 76px); line-height: 1.04; font-weight: 700; letter-spacing: -0.035em; color: #a1a1aa;">built end to end.</span>
+      </h1>
+      <p class="h-sub" data-ko="모바일 애플리케이션과 웹 서비스를 기획부터 배포까지 직접 개발하는 소프트웨어 개발 회사입니다. 실사용자 관점의 제품 경험을 만들기 위해 모바일 앱, 홈페이지, 전자상거래 솔루션 개발을 전문으로 하고 있습니다." data-en="A software company that plans, builds, and ships mobile applications and web services end to end. We specialize in mobile apps, websites, and e-commerce solutions built from a real-user perspective." style="margin: 32px 0 0; max-width: 52ch; font-size: clamp(16px, 1.9vw, 19px); line-height: 1.7; color: #52525b;">A software company that plans, builds, and ships mobile applications and web services end to end. We specialize in mobile apps, websites, and e-commerce solutions built from a real-user perspective.</p>
+      <div class="h-cta" style="margin-top: 38px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+        <a href="#contact" class="cta-btn" data-ko="문의하기" data-en="Get in touch">Get in touch</a>
+        <a href="#services" class="svc-more-link" data-ko="서비스 보기 →" data-en="View services →">View services →</a>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" style="padding: clamp(56px, 9vh, 100px) 0; border-bottom: 1px solid #ececef;">
+      <div data-reveal="" style="margin-bottom: 44px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #a1a1aa;" data-ko="서비스" data-en="Services">Services</span>
+      </div>
+      <div>
+        <div class="svc-row-outer svc-row" data-reveal="" data-reveal-d="1">
+          <span class="svc-num-col" style="font-size: 14px; font-weight: 600; color: #c4c4c8; font-variant-numeric: tabular-nums; padding-top: 3px;">01</span>
+          <div class="svc-inner">
+            <h3 style="margin: 0; font-size: clamp(20px, 2.8vw, 26px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;" data-ko="모바일 앱 개발" data-en="Mobile App Development">Mobile App Development</h3>
+            <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.7; color: #52525b;" data-ko="안드로이드·iOS 애플리케이션 기획, 개발, 배포 및 유지보수를 진행합니다." data-en="Planning, developing, deploying, and maintaining Android and iOS applications.">Planning, developing, deploying, and maintaining Android and iOS applications.</p>
+          </div>
+        </div>
+        <div class="svc-row-outer svc-row" data-reveal="" data-reveal-d="2">
+          <span class="svc-num-col" style="font-size: 14px; font-weight: 600; color: #c4c4c8; font-variant-numeric: tabular-nums; padding-top: 3px;">02</span>
+          <div class="svc-inner">
+            <h3 style="margin: 0; font-size: clamp(20px, 2.8vw, 26px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;" data-ko="홈페이지 개발" data-en="Website Development">Website Development</h3>
+            <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.7; color: #52525b;" data-ko="기업 및 서비스 홈페이지를 요구사항에 맞게 설계하고 제작합니다." data-en="Designing and building corporate and service websites to spec.">Designing and building corporate and service websites to spec.</p>
+          </div>
+        </div>
+        <div class="svc-row-outer svc-row" data-reveal="" data-reveal-d="3">
+          <span class="svc-num-col" style="font-size: 14px; font-weight: 600; color: #c4c4c8; font-variant-numeric: tabular-nums; padding-top: 3px;">03</span>
+          <div class="svc-inner">
+            <h3 style="margin: 0; font-size: clamp(20px, 2.8vw, 26px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2;" data-ko="전자상거래 솔루션" data-en="E-commerce Solutions">E-commerce Solutions</h3>
+            <p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.7; color: #52525b;" data-ko="온라인 판매 및 결제가 필요한 서비스의 전자상거래 시스템을 구축합니다." data-en="Building e-commerce systems for services that need online sales and payment.">Building e-commerce systems for services that need online sales and payment.</p>
+          </div>
+        </div>
+        <div style="border-top: 1px solid #ececef;"></div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" style="padding: clamp(56px, 9vh, 100px) 0; border-bottom: 1px solid #ececef;">
+      <div data-reveal="" style="margin-bottom: 44px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #a1a1aa;" data-ko="작업" data-en="Work">Work</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+
+        <!-- MONO SUN WORKS: 세원비전이 직접 운영하는 아이웨어 브랜드·온라인 쇼핑몰 -->
+        <a href="https://monosunworks.com/" target="_blank" rel="noopener" class="pcard" data-reveal="">
+          <div style="aspect-ratio: 3/2; background: #f5f2ec; overflow: hidden; border-bottom: 1px solid #e4e4e7;">
+            <img src="../assets/monosunworks.jpg" alt="MONO SUN WORKS eyewear brand image" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div style="padding: 20px 22px 24px; flex: 1;">
+            <div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #a1a1aa; font-weight: 600; margin-bottom: 10px;">E-commerce · <span data-ko="자사 브랜드" data-en="Our Brand">Our Brand</span></div>
+            <h3 style="margin: 0 0 7px; font-size: 18px; font-weight: 700; letter-spacing: -0.02em;">MONO SUN WORKS</h3>
+            <p style="margin: 0; font-size: 14px; color: #71717a; line-height: 1.65;" data-ko="세원비전이 직접 운영하는 아이웨어 브랜드와 온라인 쇼핑몰(monosunworks.com). 안경테·선글라스 판매" data-en="Eyewear brand and online store owned and operated by Sewon Vision (monosunworks.com). Eyeglass frames and sunglasses">Eyewear brand and online store owned and operated by Sewon Vision (monosunworks.com). Eyeglass frames and sunglasses</p>
+          </div>
+        </a>
+
+        <!-- 로펌 홈페이지 -->
+        <a href="https://dhptn.co.kr/" target="_blank" rel="noopener" class="pcard" data-reveal="">
+          <div style="aspect-ratio: 3/2; background: #fff; overflow: hidden; display: flex; flex-direction: column; border-bottom: 1px solid #e4e4e7;">
+            <div style="background: #f4f4f5; border-bottom: 1px solid #e4e4e7; padding: 7px 12px; display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #fca5a5; display: inline-block;"></span>
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #fde68a; display: inline-block;"></span>
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #86efac; display: inline-block;"></span>
+              <div style="flex: 1; margin-left: 8px; background: #e4e4e7; border-radius: 3px; height: 13px;"></div>
+            </div>
+            <div style="background: #1a1f2e; padding: 10px 18px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
+              <div style="width: 52px; height: 5px; background: #fff; border-radius: 2px; opacity: 0.9;"></div>
+              <div style="display: flex; gap: 10px;">
+                <div style="width: 24px; height: 3px; background: rgba(255,255,255,0.35); border-radius: 2px;"></div>
+                <div style="width: 24px; height: 3px; background: rgba(255,255,255,0.35); border-radius: 2px;"></div>
+                <div style="width: 24px; height: 3px; background: rgba(255,255,255,0.35); border-radius: 2px;"></div>
+              </div>
+            </div>
+            <div style="flex: 1; padding: 18px; background: #fff; display: flex; flex-direction: column; justify-content: center; gap: 8px;">
+              <div style="width: 28%; height: 3px; background: #c8a55e; border-radius: 2px;"></div>
+              <div style="width: 78%; height: 9px; background: #1a1f2e; border-radius: 2px; opacity: 0.88;"></div>
+              <div style="width: 56%; height: 9px; background: #1a1f2e; border-radius: 2px; opacity: 0.88;"></div>
+              <div style="display: flex; flex-direction: column; gap: 4px; margin-top: 4px;">
+                <div style="width: 92%; height: 3px; background: #d4d4d8; border-radius: 2px;"></div>
+                <div style="width: 68%; height: 3px; background: #d4d4d8; border-radius: 2px;"></div>
+              </div>
+              <div style="margin-top: 6px; width: 64px; height: 18px; background: #1a1f2e; border-radius: 3px;"></div>
+            </div>
+          </div>
+          <div style="padding: 20px 22px 24px; flex: 1;">
+            <div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #a1a1aa; font-weight: 600; margin-bottom: 10px;">Web · <span data-ko="법무법인" data-en="Law Firm">Law Firm</span></div>
+            <h3 style="margin: 0 0 7px; font-size: 18px; font-weight: 700; letter-spacing: -0.02em;" data-ko="법무법인 홈페이지" data-en="Law Firm Website">Law Firm Website</h3>
+            <p style="margin: 0; font-size: 14px; color: #71717a; line-height: 1.65;" data-ko="법무법인 공식 웹사이트 기획 및 개발" data-en="Official website design and development for a law firm">Official website design and development for a law firm</p>
+          </div>
+        </a>
+
+        <!-- 로또명당 앱 -->
+        <a href="https://play.google.com/store/apps/details?id=com.sewon.lotto" target="_blank" rel="noopener" class="pcard" data-reveal="">
+          <div style="aspect-ratio: 3/2; background: linear-gradient(160deg, #16213f, #0c1424); overflow: hidden; display: flex; flex-direction: column; border-bottom: 1px solid #e4e4e7;">
+            <div style="padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
+              <div style="width: 34px; height: 4px; background: rgba(255,255,255,0.35); border-radius: 2px;"></div>
+              <div style="display: flex; gap: 4px; align-items: center;">
+                <div style="width: 10px; height: 4px; background: rgba(255,255,255,0.35); border-radius: 2px;"></div>
+                <div style="width: 10px; height: 4px; background: rgba(255,255,255,0.35); border-radius: 2px;"></div>
+                <div style="width: 14px; height: 7px; border: 1px solid rgba(255,255,255,0.35); border-radius: 2px;"></div>
+              </div>
+            </div>
+            <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+              <img src="../assets/lotto-myeongdang-icon.png" alt="Lotto Myeongdang app icon" style="width: 104px; height: 104px; border-radius: 22px; box-shadow: 0 12px 30px rgba(0,0,0,0.35);">
+            </div>
+            <div style="padding: 12px 18px 16px; display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
+              <span style="color: #facc15; font-size: 12px; letter-spacing: 1px;">★★★★☆</span>
+              <span style="background: #fff; color: #1a1f2e; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 999px;" data-ko="설치" data-en="Install">Install</span>
+            </div>
+          </div>
+          <div style="padding: 20px 22px 24px; flex: 1;">
+            <div style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #a1a1aa; font-weight: 600; margin-bottom: 10px;">App · <span data-ko="로또" data-en="Lottery">Lottery</span></div>
+            <h3 style="margin: 0 0 7px; font-size: 18px; font-weight: 700; letter-spacing: -0.02em;" data-ko="로또명당" data-en="Lotto Myeongdang">Lotto Myeongdang</h3>
+            <p style="margin: 0; font-size: 14px; color: #71717a; line-height: 1.65;" data-ko="로또 당첨 판매점 지도와 QR 당첨 확인을 제공하는 모바일 앱" data-en="Mobile app for lottery winning store maps and QR ticket verification">Mobile app for lottery winning store maps and QR ticket verification</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="padding: clamp(56px, 9vh, 100px) 0; border-bottom: 1px solid #ececef;">
+      <div style="max-width: 880px;">
+        <span data-reveal="" style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #a1a1aa;" data-ko="소개" data-en="About">About</span>
+        <p data-reveal="" data-reveal-d="1" style="margin: 36px 0 0; font-size: clamp(22px, 3.2vw, 33px); line-height: 1.46; font-weight: 500; letter-spacing: -0.02em; color: #27272a;" data-ko="세원비전은 모바일 소프트웨어 개발과 공급, 홈페이지 개발, 전자상거래업을 영위해 온 소프트웨어 개발 전문 기업입니다. 작은 팀이 가진 민첩함을 바탕으로 기획, 디자인, 개발, 운영을 하나의 흐름으로 이어가며 서비스를 만들고 있습니다. 아이웨어 브랜드 MONO SUN WORKS(monosunworks.com)도 직접 운영합니다." data-en="Sewon Vision is a software company specializing in mobile software development and supply, website development, and e-commerce. With the agility of a small team, we carry planning, design, development, and operations through as one continuous flow. We also own and operate the eyewear brand MONO SUN WORKS (monosunworks.com).">Sewon Vision is a software company specializing in mobile software development and supply, website development, and e-commerce. With the agility of a small team, we carry planning, design, development, and operations through as one continuous flow. We also own and operate the eyewear brand MONO SUN WORKS (monosunworks.com).</p>
+        <div data-reveal="" data-reveal-d="2" style="margin-top: 44px;">
+          <div style="font-size: 13px; color: #a1a1aa; font-weight: 600; margin-bottom: 8px;" data-ko="플랫폼" data-en="Platform">Platform</div>
+          <div style="font-size: 16px; font-weight: 600; color: #27272a;">Android · iOS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="padding: clamp(56px, 10vh, 112px) 0;">
+      <span data-reveal="" style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #a1a1aa;" data-ko="문의" data-en="Contact">Contact</span>
+      <h2 data-reveal="" data-reveal-d="1" style="margin: 20px 0 0; font-size: clamp(28px, 5vw, 52px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1;" data-ko="함께 만들 앱이 있으신가요?" data-en="Have an app to build?">Have an app to build?</h2>
+      <p data-reveal="" data-reveal-d="2" style="margin: 18px 0 0; font-size: 17px; line-height: 1.65; color: #52525b; max-width: 46ch;" data-ko="앱 개발 의뢰나 협업 제안은 이메일로 편하게 연락 주세요." data-en="For development inquiries or collaboration, feel free to reach out by email.">For development inquiries or collaboration, feel free to reach out by email.</p>
+      <div data-reveal="" data-reveal-d="3" style="margin-top: 30px;">
+        <a href="mailto:contact@sewonvision.com" class="mail-link" style="font-size: clamp(18px, 2.8vw, 27px); font-weight: 600; letter-spacing: -0.02em; color: #18181b;">contact@sewonvision.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid #ececef; background: #fafafa;">
+    <div class="footer-inner" style="max-width: 1120px; margin: 0 auto; padding: 36px 28px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: center;">
+      <div style="font-size: 13.5px; line-height: 1.7; color: #71717a;">
+        <div style="font-weight: 700; color: #3f3f46; margin-bottom: 3px;" data-ko="주식회사 세원비전" data-en="Sewon Vision Co., Ltd.">Sewon Vision Co., Ltd.</div>
+        <div data-ko="대표 김민경 · 서울특별시 구로구 도림천로 446" data-en="CEO Minkyung Kim · 446 Dorimcheon-ro, Guro-gu, Seoul, Korea">CEO Minkyung Kim · 446 Dorimcheon-ro, Guro-gu, Seoul, Korea</div>
+        <div data-ko="사업자등록번호 183-86-00084 · 운영 브랜드 MONO SUN WORKS (monosunworks.com)" data-en="Business registration no. 183-86-00084 · Brand: MONO SUN WORKS (monosunworks.com)">Business registration no. 183-86-00084 · Brand: MONO SUN WORKS (monosunworks.com)</div>
+        <div>© 2026 Sewon Vision. All rights reserved.</div>
+      </div>
+      <div style="display: flex; gap: 22px; font-size: 13.5px; color: #71717a; font-weight: 500;">
+        <a href="../privacy.html" class="footer-link" data-ko="개인정보처리방침" data-en="Privacy Policy">Privacy Policy</a>
+        <a href="../terms.html" class="footer-link" data-ko="이용약관" data-en="Terms of Service">Terms of Service</a>
+        <a href="mailto:contact@sewonvision.com" class="footer-link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  // 언어는 주소로 정한다: / = 한국어, /en/ = 영어(en/index.html은 build_en.py로 만든다).
+  // 버튼은 다른 언어 주소로 옮겨 가고, 개인정보처리방침·이용약관이 따라오도록 sv_lang에도 남긴다
+  var STORAGE_KEY = "sv_lang";
+  var isEn = document.documentElement.getAttribute("data-page") === "en";
+  var state = { lang: isEn ? "en" : "ko", menuOpen: false };
+  try { localStorage.setItem(STORAGE_KEY, state.lang); } catch (e) {}
+
+  var langBtn = document.getElementById("langBtn");
+  var hamBtn = document.getElementById("hamBtn");
+  var mobMenu = document.getElementById("mobMenu");
+
+  function applyLang() {
+    document.documentElement.lang = state.lang;
+    document.querySelectorAll("[data-ko]").forEach(function (el) {
+      el.textContent = state.lang === "ko" ? el.dataset.ko : el.dataset.en;
+    });
+    langBtn.textContent = state.lang === "ko" ? "EN" : "한";
+  }
+
+  function setMenuOpen(open) {
+    state.menuOpen = open;
+    hamBtn.classList.toggle("open", open);
+    mobMenu.classList.toggle("open", open);
+  }
+
+  langBtn.addEventListener("click", function () {
+    try { localStorage.setItem(STORAGE_KEY, isEn ? "ko" : "en"); } catch (e) {}
+    location.href = (isEn ? "../" : "en/") + location.hash;
+  });
+
+  hamBtn.addEventListener("click", function () {
+    setMenuOpen(!state.menuOpen);
+  });
+
+  mobMenu.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () { setMenuOpen(false); });
+  });
+
+  function setupReveal() {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.06, rootMargin: "0px 0px -30px 0px" });
+
+    document.querySelectorAll("[data-reveal]").forEach(function (el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.96) {
+        el.classList.add("in");
+      } else {
+        observer.observe(el);
+      }
+    });
+  }
+
+  applyLang();
+  setupReveal();
+})();
+</script>
+
+</body>
+</html>
